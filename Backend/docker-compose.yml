@@ -1,0 +1,81 @@
+version: '3.5'
+
+x-common-variables: &env
+  SPRING_PROFILES_ACTIVE: compose
+
+services:
+  discoveryserver:
+    build:
+      context: ./
+      dockerfile: ./discoveryserver/Dockerfile
+    image: test.skilldo.org:8189/formazione/carshop/ds:latest
+    restart: always
+    ports:
+      - 8776:8761
+  gateway:
+    build:
+      context: ./
+      dockerfile: ./spring-gateway/Dockerfile
+    image: test.skilldo.org:8189/formazione/carshop/gateway:latest
+    restart: always
+    environment:
+      EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE: http://discoveryserver:8761/eureka/
+      <<: *env
+    depends_on:
+      - discoveryserver # Questo servizio dipende dal discoveryServer. Starterà prima il CONTAINER del discoveryServer e poi il gateway
+    ports:
+      - 8098:8080
+
+  # App backend service
+  carShop:
+    # Configurazioni per buildare il docker image del microservizio
+    build:
+      context: ./
+      dockerfile: ./carShop/Dockerfile
+    image: test.skilldo.org:8189/formazione/carshop/micro1:latest #nome immagine docker
+ # Questo comando inoltra la porta esposta dal container 8080 (destra) alla porta 8080 del computer host (sinistra)
+    restart: always #riavvio continuo del microservizio
+    depends_on:
+      - db1 # Questo servizio dipende dal db. Starterà prima il CONTAINER del db e poi il microservizio
+      - discoveryserver # Questo servizio dipende dal discoveryServer. Starterà prima il CONTAINER del discoveryServer e poi il microservizio
+    environment: # Sovrascrive le variabili d'ambiente al servizio (application.properties)
+      EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE: http://discoveryserver:8761/eureka/ #collegato al network del discoveryServer
+      SPRING_DATASOURCE_URL: jdbc:mysql://db1:3306/carshopdb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false #collegato al network del db1
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      <<: *env
+
+  user:
+    # Configurazioni per buildare il docker image del microservizio
+    build:
+      context: ./
+      dockerfile: ./user/Dockerfile
+    image: test.skilldo.org:8189/formazione/carshop/micro2:latest #nome immagine docker
+    # Questo comando inoltra la porta esposta dal container 8080 (destra) alla porta 8080 del computer host (sinistra)
+    restart: always #riavvio continuo del microservizio
+    depends_on:
+      - db1 # Questo servizio dipende dal db. Starterà prima il CONTAINER del db e poi il microservizio
+      - discoveryserver # Questo servizio dipende dal discoveryServer. Starterà prima il CONTAINER del discoveryServer e poi il microservizio
+    environment: # Sovrascrive le variabili d'ambiente al servizio (application.properties)
+      EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE: http://discoveryserver:8761/eureka/ #collegato al network del discoveryServer
+      SPRING_DATASOURCE_URL: jdbc:mysql://db1:3306/carshopdb?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false #collegato al network del db1
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      <<: *env
+  # Database Service (Mysql)
+  db1:
+    image: mysql:8.0.28
+    ports:
+      - "3318:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: carshopdb
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+    volumes:
+      - db1-data:/var/lib/mysql
+
+# Volumes
+volumes:
+  db1-data:

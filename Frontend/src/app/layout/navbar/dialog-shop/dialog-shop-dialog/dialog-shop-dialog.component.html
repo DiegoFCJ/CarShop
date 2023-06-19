@@ -1,0 +1,39 @@
+<div class="row">
+  <h2 class="col-10" mat-dialog-title>Carrello</h2>
+  <div mat-dialog-actions class="col-2 mot-btn">
+    <button mat-button mat-dialog-close class="close"><i class="material-icons">close</i></button>
+  </div>
+</div>
+
+<mat-dialog-content class="mat-typography overflow-visible" style="max-height: 100vh !important;">
+
+  <div *ngFor="let auto of acquistiService.autos">
+    <div  *ngIf="!auto.acquistato">
+      <app-shop-prod-list [auto]="auto"></app-shop-prod-list>
+    </div>
+  </div>
+  
+  <div class="row">
+    <p class="col-2" style="font-size: 14px; font-weight: 200;">iva:</p>
+    <p class="col-10" style="font-size: 14px; text-align: end; font-weight: 400;">{{acquistiService.ivaTemp}}€</p>
+  </div>
+  
+  <div class="row">
+    <p class="col-2" style="font-size: 14px; font-weight: 200;">Subtotale:</p>
+    <p class="col-10" style="font-size: 14px; text-align: end; font-weight: 400;">{{acquistiService.subTotale}}€</p>
+  </div>
+    
+  <div class="row" >
+    <p class="col-2" style="font-size: 14px; font-weight: 700;">Totale:</p>
+    <p class="col-10" style="font-size: 14px; text-align: end; font-weight: 750;">{{acquistiService.totale}}€</p>
+  </div>
+
+  <mat-dialog-actions align="center" >
+    <button class="btn-danger puls" mat-button mat-dialog-close (click)="concludiOrdine()">CONCLUDI ORDINE</button>
+  </mat-dialog-actions>
+  <mat-dialog-actions align="center" >
+    <button class="btn-danger puls1 mt-4 mb-5" mat-button [mat-dialog-close]="true" cdkFocusInitial [routerLink]="['/user']">CONTINUA LO SHOPPING</button>
+  </mat-dialog-actions>
+
+</mat-dialog-content> 
+

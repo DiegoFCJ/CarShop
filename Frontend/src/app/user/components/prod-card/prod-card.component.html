@@ -1,0 +1,20 @@
+<div class="card m-2">
+  <img [src]="fotoUrl" style="max-height: 100px;" class="card-img-top principalPic" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{item.codice}}</h5>
+    <p class="card-text">{{item.modello}}</p>
+    <p class="card-text price">€ {{item.prezzo}}</p>
+
+    <ng-container *ngIf="this.currentPage === '/user' || this.currentPage === '/user/home'; else elseTemplate">
+      <a [routerLink]="['./dettaglio', item.id]" class="btn btn-danger bottone" href="#" role="button" aria-expanded="false">
+        DETTAGLI
+      </a>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <a [routerLink]="['../', item.id]" (click)="window.location.reload();" class="btn btn-danger bottone" href="#" role="button" aria-expanded="false">
+        DETTAGLI
+      </a>
+    </ng-template>
+
+  </div>
+</div>

@@ -1,0 +1,181 @@
+@import '~animate.css/animate.min';
+
+a {
+  color: #AA1010;
+}
+
+.background {
+  background-image: url(../../../assets/assets-auto/car2Login.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+
+.blocco2 {
+  color: rgb(235, 235, 228) !important;
+  margin-left: 1px;
+}
+
+.blocco3 {
+  color: rgb(235, 235, 228) !important;
+  margin-left: 1px;
+}
+
+.blocco4 {
+  color: #AA1010 !important;
+}
+
+.btn {
+  background-color: #AA1010;
+  color: white;
+}
+
+.btn-2 {
+  background-color: white !important;
+  color: #AA1010 !important;
+  border-color: #AA1010 !important;
+}
+
+.check-div {
+  margin-top: 10px;
+  margin-left: -5px;
+}
+
+.circle1 {
+  background-color: #AA1010;
+  float: left;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  shape-outside: circle();
+  clip-path: circle();
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.circle2 {
+  background-color: rgb(235, 235, 228);
+  float: left;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  shape-outside: circle();
+  clip-path: circle();
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.circle3 {
+  background-color: #e9f9e9;
+  float: left;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  shape-outside: circle();
+  clip-path: circle();
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #228b22;
+}
+
+.circle4 {
+  background-color: #AA1010;
+  float: left;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  shape-outside: circle();
+  clip-path: circle();
+  margin-right: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+}
+
+.confirm-pass {
+  margin-top: 2px;
+}
+
+form {
+  background-color: white;
+  width: 40%;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-left: 20%;
+  border-radius: 5px;
+}
+
+.form-check-input {
+  margin: 0 3px 0 3px;
+}
+
+.form-check-label {
+  margin: 9px 0 3px 20px;
+}
+
+.form-label {
+  color: rgba(218, 217, 217, 0.9);
+}
+
+.footer-form {
+  padding-top: 35px;
+}
+
+.footer-form-2 {
+  padding-top: 35px;
+}
+
+h1,
+.tag-accesso {
+  color: #AA1010;
+}
+
+h5 {
+  color: grey;
+}
+
+h6 {
+  color: rgb(215, 215, 211);
+}
+
+hr {
+  color: #AA1010 !important;
+}
+
+input {
+  height: 35px;
+}
+
+.logo {
+  padding: 20px 0 0 20px;
+}
+
+.pass-div {
+  margin-top: 2px;
+}
+
+.privacy {
+  color: #AA1010 !important;
+  text-decoration: underline !important;
+}
+
+.tag-accesso-3 {
+  color: #228b22;
+  font-weight: bold !important;
+}
+
+.tag-accesso-2 {
+  color: #AA1010;
+  margin: 5px;
+  padding-top: 10px;
+}

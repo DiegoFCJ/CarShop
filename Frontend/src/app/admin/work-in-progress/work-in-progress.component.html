@@ -1,0 +1,89 @@
+<app-location></app-location>
+<!--<body>
+    <a style="margin-left:20.8%" [routerLink]="['/admin-dashboard']" routerLinkActive="router-link-active">
+        <img src="../../../assets/notfound.svg" style="width: 50%; z-index: 0">
+    </a>
+</body>-->
+<div class="container-fluid">
+ 
+
+    <ng-container [ngSwitch]="case">
+  
+      <div *ngSwitchCase="1">
+        <div>
+  
+          <div class="dati-admin mb-4">
+            <div class="d-flex justify-content-between">
+              <h3>{{anag?.nome}} {{anag?.cognome}}</h3>
+  
+              
+              <button class=" btn modify-btn" (click)="modifyProfile()">MODIFICA</button>
+            </div>
+  
+            <div class="row justify-content-between mt-5">
+  
+              <div class="col">
+                EMAIL
+              </div>
+  
+              <div class="col">DATA DI NASCITA</div>
+              <div class="col">GENERE</div>
+              <div class="col">INDIRIZZO</div>
+              <div class="col">PASSWORD</div>
+            </div>
+  
+            <div class="row mt-2">
+              <div class="col grassetto">{{user?.email}}</div>
+              <div class="col grassetto">{{anag?.dataNascita}}</div>
+              <div class="col grassetto">{{anag?.genere}}</div>
+              <div class="col grassetto">{{anag?.indirizzo}}</div>
+              <div class="col grassetto">**************</div>
+            </div>
+  
+          </div>
+  
+        </div>
+        <div class="dati-biblioteca">
+  
+          <div class="d-flex justify-content-between">
+  
+            <h3>Concessionaria {{conc?.nome}}</h3>
+  
+            <button class=" btn modify-btn" (click)="modifyConc()">MODIFICA</button>
+  
+          </div>
+  
+          <div class="row justify-content-around mt-5">
+  
+            <div class="col-3">
+              INDIRIZZO
+            </div>
+  
+            <div class="col-9">
+              DESCRIZIONE
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-3 grassetto">{{conc?.indirizzo}}</div>
+            <div class="col-9 grassetto">
+              {{conc?.descrizione}}
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+      <div *ngSwitchCase="2">
+        <app-admin-profilo-update [conc]="conc" [routerLink]="['/admin-dashboard/work-in-progress']"></app-admin-profilo-update>
+        
+      </div>
+  
+      <div *ngSwitchCase="3">
+  
+        <app-admin-profilo-update-anag [user]="user"></app-admin-profilo-update-anag>
+  
+      </div>
+  
+    </ng-container>
+  </div>

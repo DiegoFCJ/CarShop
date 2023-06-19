@@ -1,0 +1,90 @@
+/* Classe per il placeholder dei campi di input */
+.form-control::placeholder {
+    color: #cbcbcb;
+    font-size: small;
+}
+
+/* Classe per i campi di input */
+.form-control {
+    padding-top: 1.7em;
+    padding-bottom: 1.7em;
+    font-size:small;
+}
+
+/* Classe per il campo password */
+#floatingPassword {
+    padding-top: 1.7em;
+    padding-bottom: 1.7em;
+}
+
+/* Classe per l'etichetta del campo password */
+.form-floating label {
+    margin-top: -15px;
+    font-weight: normal;
+    color: #cbcbcb;
+    font-size: small;
+}
+
+/* Classe per il pulsante di visibilit� password */
+.btn-outline-secondary {
+    background-color: white;
+    border: none;
+}
+
+/* Classe per l'icona del pulsante di visibilit� password */
+i {
+    width: 100px;
+}
+
+/* Classe per la checkbox di "ricordami" */
+.form-check-input {
+    width: 1.5em;
+    height: 1.5em;
+    border-color: gray;
+    border: 2px solid gray;
+}
+
+/* Classe per l'etichetta della checkbox */
+.form-check-label {
+    padding-top: 0.1em;
+    padding-left: 1em;
+    font-size: small;
+    font-weight: 600;
+}
+
+/* Classe per lo stile della checkbox selezionata */
+input:checked {
+    background-color: #A60F0F;
+    border-color: #A60F0F;
+}
+
+/* Classe per il link di password dimenticata */
+.text-body {
+    font-weight: bold;
+    color: #A60F0F !important;
+    font-size: small;
+    text-decoration: none;
+}
+
+/* Classe per il pulsante di accesso */
+.btn-primary {
+    background-color: #A60F0F;
+    border-color: #A60F0F;
+    width: 100%;
+    height: 40px;
+    font-size: small;
+}
+
+/* Classe per lo stile del testo "Non hai un account?" */
+.testo {
+    font-size: small;
+    font-weight: 600;
+    padding-right: 0.5em;
+}
+
+/* Classe per il link di registrazione */
+.Reg {
+    font-weight: bold;
+    color: #A60F0F !important;
+    font-size: small;
+}

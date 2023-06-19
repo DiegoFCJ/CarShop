@@ -1,0 +1,121 @@
+<div class="container all">
+  <div class="row rigaForm">
+    <form class="dettagliForm" #f="ngForm">
+      <div class="row">
+        <div class="imgProfilo col-6">
+          <!--app-immagine-profilo></app-immagine-profilo-->
+        </div>
+          
+        <div class="btSubmit col-6">
+          <button (click)="onClick(f)" class="btn btn-danger bottone" type="submit">SALVA</button>
+        </div>
+      </div>
+      
+      <div class="row linea">
+        <label class="sottotitoli col-12" for="datiAnagrafici">Dati anagrafici</label>
+      </div>
+      
+      <div class="row linea">
+        <div class="form-floating col-6">
+          <input [ngModel]="anagrafica?.cognome" style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="cognome"  name="cognome" required>
+          <label for="cognome" class="labelForm">Cognome*</label>
+        </div>
+        <div class="form-floating col-6">
+          <input [ngModel]="anagrafica?.nome" style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="nome" name="nome" required >
+          <label for="nome" class="labelForm">Nome*</label>
+        </div>
+      </div>
+
+      <div class="row linea">
+        <div class="form-floating col-6">
+          <input [ngModel]="dataNascita" type="date" class="form-control" id="data" name="data"  style="height: 40px; font-size: 15px; padding-top: 20px;"required >
+          <label for="data" class="labelForm">Data di nascita*</label>
+        </div>
+
+          <div class="form-floating col-6">
+            
+            <select class="form-select" aria-label="Genere" id="genere" name="genere" [ngModel]="anagrafica?.genere">
+              <option selected disabled hidden>[ngModel]="anagrafica?.genere"</option>
+              <option value="Uomo">Uomo</option>
+              <option value="Donna">Donna</option>
+              <option value="Altro">Altro</option>
+            </select>
+            <label for="genere" class="labelForm">Genere</label>
+
+          </div>
+      </div>
+
+
+      <div class="row linea">
+        <div class="form-floating col-3">
+          <input [ngModel]="anagrafica?.nazione" style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="nazione"  name="nazione" required>
+          <label for="nazione" class="labelForm">Nazione*</label>
+        </div>
+
+        <div class="form-floating col-3">
+          <select class="form-select" aria-label="provincia" id="provincia" name="provincia" [ngModel]="anagrafica?.provincia" type="text" required>
+            <option selected disabled hidden>[ngModel]="selectedLevel" </option>
+            <option *ngFor="let p of provinceItaliane" [ngValue]="p">{{p}}</option>
+          </select>
+          <label for="provincia" class="labelForm">Provincia*</label>
+        </div>
+
+        <div class="form-floating col-3">
+          <input [ngModel]="anagrafica?.cittaResidenza" style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="cittaResidenza"  name="cittaResidenza" required>
+          <label for="cittaResidenza" class="labelForm">Città di residenza*</label>
+        </div>
+
+        <div class="form-floating col-3">
+          <input [ngModel]="anagrafica?.indirizzo"  style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="indirizzo" name="indirizzo" required>
+          <label for="indirizzo" class="labelForm">indirizzo di residenza*</label>
+        </div>
+
+      </div>
+
+      <div class="row linea" style="margin-top: 2em;">
+        <label class="sottotitoli col-12" for="datiAnagrafici">Dati di accesso</label>
+      </div>
+
+      <div class="row linea">
+        <div class="form-floating col-6">
+          <input style="height: 40px; font-size: 15px; padding-top: 20px;" type="email" class="form-control" id="email" [ngModel]="user?.email" name="email" required>
+          <label for="email" class="labelForm">Email*</label>
+        </div>
+      </div>
+
+      <div class="row linea">
+        <div class="form-floating col-6">
+          <input style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="password" [ngModel]="password" name="password" required>
+          <i class="bi bi-eye-slash" 
+                    id="togglePassword"></i>
+          <label for="password" class="labelForm">Password*</label>
+        </div>
+
+        <div class="form-floating col-6">
+          <input style="height: 40px; font-size: 15px; padding-top: 20px;" type="text" class="form-control" id="confermaPassword" [ngModel]="confermaPassword" placeholder="Conferma password" name="confermaPassword" required/>
+          <i class="bi bi-eye-slash" 
+                    id="toggleConfermaPassword"></i>
+          <label for="confermaPassword" class="labelForm">Conferma password*</label>
+          
+        </div>
+      </div>
+
+      <!--div class="row linea" style="margin-top: 2em;">
+        <label class="sottotitoli col-12" for="gestioneAccount">Gestione Account</label>
+        <label for="" class="col-6" style="font-weight: 400; font-size: 12px;">Puoi eliminare il tuo account e tutti i dati associati ad esso</label>
+        
+        <div class="btSubmit col-6"-->
+          <!-- <button (click)="deleteUser()" class="btn1 btn-danger bottone" type="submit">ELIMINA</button>  -->
+          
+         
+          <!--button (click)="controlloDeleteUser()" class="btn1 btn-danger bottone" type="submit">ELIMINA</button>
+          
+
+
+        </div>
+      </div-->
+
+    </form>
+  </div>
+
+</div>

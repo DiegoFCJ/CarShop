@@ -1,0 +1,30 @@
+.cancel-btn{
+    color: #A60F0F;
+    border-color: #A60F0F;
+}
+
+.form-control{
+    align-content: start !important;
+}
+
+input{
+    height: 35px;
+}
+
+.save-btn{
+    background-color: #A60F0F;
+    color: white;
+    border-color: #A60F0F;
+    border-radius: 3px;
+    padding:7px 15px 7px 15px;
+    
+}
+
+.primodiv{
+padding-top: 20px;
+}
+
+.sfondo-div{
+    background-color: white;
+    margin-top: 10px;
+}

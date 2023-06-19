@@ -1,0 +1,25 @@
+<!-- NGFOR -->
+<div class="card mb-3" style="max-height: 100px; border: none; overflow: hidden;">
+  <div class="row">
+    <div class={{scegliColonna()}} style="height:60px;"> 
+      <div style="width: 80px;"><img [src]="fotoUrl" height="60px" width="80px" class="rounded float-start" alt="..."></div>
+    </div>
+    
+    <div class="col-5">
+      <div class="card-body">
+        <h5 style="margin-bottom: 2%; font-weight: 900; font-size: 15px;" class="card-title">{{auto.auto.modello}}</h5>
+        <p class="card-text" style="font-size: 12px; "><small class="text-muted">Quantità: {{auto.quantita}}</small></p>
+      </div>
+    </div>
+
+    <div class={{scegliOffset()}}>
+      <div class="card-body">
+        <h5 style="margin-bottom: 2%;" class="card-title">{{auto.prezzo}}€</h5>
+        <div mat-dialog-actions class="col-2 mot-btn">
+          <button *ngIf="hideConfermaOrdine" id="trash" mat-button mat-dialog-close class="close trash" (click)="deleteAcquisti(auto.id)"><i class="material-icons">delete</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="col-12">
+</div>

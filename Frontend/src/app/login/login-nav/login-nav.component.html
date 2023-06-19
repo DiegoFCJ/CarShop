@@ -1,0 +1,31 @@
+<div class="row" style="background-color: brown; height: 150px">
+
+    <div class="col-md-10 offset-md-1">
+
+        <ng-container *ngIf="usServ.isAdmin; else user">
+
+            <div class="card text" style="border:none">
+                <img src="../../../assets/duotone.png" id="LoginNAV" class="" alt="...">
+            </div>
+
+        </ng-container>
+
+        <ng-template #user>
+
+            <div class="card text" style="border:none">
+                <img src="../../../assets/assets-auto/car2Login.jpg" id="LoginNAV" class="" alt="...">
+                <div class="overlay OvUSER" ></div>
+            </div>
+
+        </ng-template>
+
+        <div class="card-img-overlay row d-flex justify-content-center align-items-center">
+
+            <img src="../../assets/logo.svg" style="width:400px" class="card text bg-transparent border-0" alt="..." />
+
+        </div>
+
+    </div>
+
+</div>
+

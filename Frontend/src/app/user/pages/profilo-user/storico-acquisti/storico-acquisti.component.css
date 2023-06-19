@@ -1,0 +1,27 @@
+.titolo {
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+table {
+  width: 100%;
+  border: none;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.ctain {
+  height: 58em;
+}
+
+.imgView {
+  width: 15px;
+  height: 15px;
+}
+
+th { 
+  font-weight: 800;
+  color: black;
+}

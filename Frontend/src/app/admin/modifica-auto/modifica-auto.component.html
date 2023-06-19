@@ -1,0 +1,160 @@
+<app-location></app-location>
+
+
+<div class="container-fluid">
+  <div class="container ms-3 me-5" style="background-color: white;">
+    <div class="row">
+      <div class="col">
+        <h3 class="p-4 pb-2" style="color: grey;">Informazioni Generali</h3>
+      </div>
+    </div>
+
+    <form #f="ngForm">
+      <div class="row">
+        <div class="col-3">
+          <div  class="divsquare ms-3" style="position: relative; z-index: 0;">
+          <!--  <div id="imagePreview" 
+                 class="imgInputForm m-0 ms-1 mt-1" 
+                 [style.backgroundImage]="'url('+ this.imageUrl +')'"> 
+            </div>-->
+          </div>
+          <div class="ms-3 mt-2" style="width: 300px;">
+            <button type="button" class="btn btn-dark p-0" style="width: 300px; height: 30px;">
+              <input type="file" 
+                     id="imageUpload" 
+                     class="inputimg" 
+                     name="myfile" 
+                     [(ngModel)]="myfile"
+                     accept=".png, .jpg, .jpeg" 
+                     #fileInput
+                     (change)="uploadFile($event)">   
+              <p class="pimg">CARICA IMMAGINE</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-9 p-5">
+          <div class="row g-3">
+            <div class="col-md-12">
+              <input type="text" 
+                     class="form-control" 
+                     id="Modell" 
+                     name="Modello" 
+                     [(ngModel)]="Modello" 
+                     placeholder="Modello*">
+            </div>
+            
+            <div class="col-md-4">
+              <label class="form-check-label labelcss" style="color:transparent; background-color: transparent;" for="Anno">
+                Anno
+              </label>
+              <input type="text" 
+                     class="form-control" 
+                     id="Anno" 
+                     name="Anno"
+                     [(ngModel)]="Anno"
+                     placeholder="Anno*">
+            </div>
+            <div class="col-md-2">
+              <label class="form-check-label labelcss" for="Costo">
+                Costo
+              </label>
+              <input type="text" 
+                     class="form-control" 
+                     id="Costo"
+                     name="Costo"
+                     [(ngModel)]="Costo" 
+                     placeholder="€ 00,00">
+            </div>
+            <div class="col-4">
+              <label class="form-check-label labelcss" for="CodiceProdotto">
+                Codice prodotto*
+              </label>
+              <input type="text" 
+                     class="form-control" 
+                     id="CodiceProdotto"
+                     name="CodiceProdotto"
+                     [(ngModel)]="CodiceProdotto" 
+                     placeholder="#">
+            </div>
+            <div class="col-2">
+              <label class="form-check-label labelcss" style="color:transparent; background-color: transparent;" for="Quantita">
+                Quantità
+              </label>
+              <input type="text" 
+                     class="form-control" 
+                     id="Quantita" 
+                     name="Quantita"
+                     [(ngModel)]="Quantita"
+                     placeholder="Quantità*">
+            </div>
+            
+            <div class="mb-12">
+              <label class="form-check-label labelcss" style="color:transparent; background-color: transparent;" for="Descrizione">
+                Descrizione
+              </label>
+              <textarea class="form-control" 
+                        id="Descrizione" 
+                        rows="7" 
+                        placeholder="Descrizione"
+                        name="Descrizione"
+                        [(ngModel)]="Descrizione"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <h3 class="p-4 pb-2" style="color: grey;">Altre immagini</h3>
+          </div>
+          <div class="col-2 offset-8 justify-content-end">
+            <button type="button" class="btn btn-outline-dark buttonposition ">AGGIUNGI IMMAGINE</button>
+          </div>
+        </div>
+        <div class="grid text-center mb-5" style="--bs-columns: 4;">
+          <div class="grid divrectangle mb-5">
+            <div class="g-col-1 divsquarelittle ms-3">
+              <i *ngIf="hideicon1" class="material-icons imageimg" id="littleImg1">image</i>
+            </div>
+            <span class="g-col-2 pt-4">
+                <h5>Image demo.jpg</h5>
+                <p>IMMAGINE / 1.2 Mb</p>
+            </span>
+          </div>
+
+          <div class="grid divrectangle mb-5">
+            <div class="g-col-1 divsquarelittle ms-3">
+              <i *ngIf="hideicon2" class="material-icons imageimg" id="littleImg2">image</i>
+            </div>
+            <span class="g-col-2 pt-4">
+                <h5>Image demo.jpg</h5>
+                <p>IMMAGINE / 1.2 Mb</p>
+            </span>
+          </div>
+
+          <div class="grid divrectangle mb-5">
+            <div class="g-col-1 divsquarelittle ms-3">
+              <i *ngIf="hideicon3" class="material-icons imageimg" id="littleImg3">image</i>
+            </div>
+            <span class="g-col-2 pt-4">
+              <h5>Image demo.jpg</h5>
+              <p>IMMAGINE / 1.2 Mb</p>
+            </span>
+          </div>
+
+          <div class="grid divrectangle mb-5">
+            <div class="g-col-1 divsquarelittle ms-3">
+              <i *ngIf="hideicon4" class="material-icons imageimg" id="littleImg4">image</i>
+            </div>
+            <span class="g-col-2 pt-4">
+              <h5>Image demo.jpg</h5>
+              <p>IMMAGINE / 1.2 Mb</p>
+            </span>
+          </div>
+        </div>
+        <div class="col-1 offset-11 mt-5 mb-4">
+          <button type="submit" class="btn btn-danger btn-lg bottoneSubmit" (click)="ModAuto(f)" style="width: 120px;">SALVA</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

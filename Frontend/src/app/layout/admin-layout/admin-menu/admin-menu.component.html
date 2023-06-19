@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="sidenav">
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#users"
+                (click)="userscollapse()">
+                <div style="scale: 1.3;">
+                <i class="bi bi-people-fill icona" style="margin-right: 15px;" ></i></div> Utenti 
+                <div class="arrow-user" *ngIf="isUserCollapsed else utentiArrow"><mat-icon>keyboard_arrow_up</mat-icon></div>
+                <ng-template #utentiArrow><div class="arrow-user"><mat-icon>keyboard_arrow_down</mat-icon></div></ng-template>
+            </button>
+            <a [routerLink]="['/admin-dashboard/users']"> <!-- <i class="fas fa-edit" style="margin-right: 10px"></i> --> 
+            <div class="collapsebtn" id="users" *ngIf="isUserCollapsed">
+                <button class="menubtn" style="padding-left: 60px;">
+                        Tutti gli utenti 
+                </button>
+            </div>
+            </a>
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#product"
+                (click)="productcollapse()">
+                <!-- <a [routerLink]="['/admin-dashboard']"> -->
+                    <div class="pt-1" style="scale: 1.3;">
+                        <!--<i class="bi bi-inbox-fill icona" style="margin-right: 15px"></i>-->
+                        <i class="material-icons icona" style="margin-right: 15px">inbox</i>
+                    </div>
+                    Prodotti
+                    <div class="arrow-product" *ngIf="isProductCollapsed else prodottiArrow"><mat-icon>keyboard_arrow_up</mat-icon></div>
+                    <ng-template #prodottiArrow><div class="arrow-product"><mat-icon>keyboard_arrow_down</mat-icon></div></ng-template>
+            </button>
+            <div class="collapsebtn" id="product" *ngIf="isProductCollapsed">
+                <a [routerLink]="['/admin-dashboard/admin-all-products']">
+                    <button class="menubtn" style="padding-left: 60px">
+                        Tutti i prodotti
+                    </button>
+                </a>
+                <a [routerLink]="['/admin-dashboard/aggiungi-auto']">
+                    <button class="menubtn" style="padding-left: 60px">
+                        Aggiungi prodotto
+                    </button>
+                </a>
+            </div>
+            <a [routerLink]="['/admin-dashboard/work-in-progress']">
+            <button class="menubtn">
+                    <div class="icona-profilo">
+                        <i class="fas fa-user icona" style="margin-right: 15px"></i>
+                    </div>Il tuo profilo
+                </button>
+            </a>
+            <!-- <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
+                <button class="menubtn" style="padding-left: 60px">
+                    <a [routerLink]="['/admin-dashboard/work-in-progress']"><i class="fas fa-user-edit"
+                            style="margin-right: 15px"></i>
+                        Modifica profilo</a>
+                </button>
+                <button class="menubtn" style="padding-left: 60px">
+                    <a [routerLink]="['/admin-dashboard/work-in-progress']"><i class="fas fa-file-alt"
+                            style="margin-right: 15px"></i>Informazioni Generali</a>
+                </button>
+            </div>
+            <button class="menubtn" (click)="logout()">
+                <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
+            </button> -->
+        </div>
+    </div>
+</div>

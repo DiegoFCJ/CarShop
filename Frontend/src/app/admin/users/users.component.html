@@ -1,0 +1,142 @@
+<app-location></app-location>
+<div style="margin: 10px; margin-left: 0px;">
+  <div>
+    <!--<div class="col-md-1">
+
+    </div>-->
+    <div class="col-md-10" style="margin-left: 10px; margin-right: 10px; float: left; width: 100%;">
+      <!--<table>
+        <tr>
+          <th>
+            Username
+          </th>
+          <th>
+            Password
+          </th>
+          <th>
+            Usertype
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            User
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="email" [(ngModel)]="usertoinsert.email">
+          </td>
+          <td>
+            <input placeholder="password" [(ngModel)]="usertoinsert.password">
+          </td>
+          <td>
+            <select placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
+              <option value="ADMIN">ADMIN</option>
+              <option value="USER">USER</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(usertoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let user of users">
+          <td>
+            <input [(ngModel)]="user.email">
+          </td>
+          <td>
+            <input [(ngModel)]="user.password">
+          </td>
+          <td>
+            <select [(ngModel)]="user.usertype">
+              <option [selected]="user.usertype===ADMIN" value="ADMIN">ADMIN</option>
+              <option [selected]="user.usertype===USER" value="USER">USER</option>
+            </select>
+          </td>
+          <td>
+            <button (click)=update(user)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(user)">Delete</button>
+          </td>
+        </tr>
+      </table>-->
+      
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row" style="text-align: left; margin-left: 30px;">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> Id <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let user" style="text-align: left; padding-left: 30px;"> {{user.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> email <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let user" style="text-align: left; padding-left: 30px;"> {{user.email}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="password">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> password <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let user" style="text-align: left; padding-left: 30px;"> {{user.password}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="usertype">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> usertype </th>
+          <td mat-cell *matCellDef="let user" style="text-align: left; padding-left: 30px;"> {{user.usertype}} </td>
+        </ng-container>
+
+        <!-- Eye Column -->
+        <ng-container matColumnDef="eye">
+          <th mat-header-cell *matHeaderCellDef class="identifica"></th>
+          <td mat-cell *matCellDef="let user" style="text-align: right; padding-left: 30px;">
+            <a [routerLink]="['../update-users/', user.id]"><button><i class="bi bi-eye" style="margin-right: 5px;"></i></button></a>
+            <div style="float: right;	color: #e8e8ea;"><span>|</span></div> 
+          </td>
+        </ng-container>
+        
+        <!-- Trash Column -->
+        <ng-container matColumnDef="trash">
+          <th mat-header-cell *matHeaderCellDef class="identifica"></th>
+          <td mat-cell *matCellDef="let user" style="text-align: left;"> 
+            <button (click)="delete(user)"><i class="bi bi-trash" style="margin-left: 5px;"></i></button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)">
+        </tr>
+      </table>
+      <div class="row" style="padding-left: 7px; padding-right: 8px;">
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+    <!--<div class="col-md-1">
+
+    </div>-->
+  </div>
+</div>

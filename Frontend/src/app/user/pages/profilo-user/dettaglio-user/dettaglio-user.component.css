@@ -1,0 +1,72 @@
+.all{
+    margin-top: 3em;  
+}
+
+.rigaColore {
+    background-color: red; 
+    height: 8em;
+    width: 30em;
+}
+
+.rigaForm {
+    height: 50em;
+    width: 30em;
+} 
+
+.dettagliForm {
+   background-color:#ffffff;
+   padding-left: 3em;
+   padding-right: 3rem;
+}
+
+.imgProfilo {
+    position: relative;
+    top: -10%;
+}
+
+.nome {
+    font-size: 3em;
+    margin-bottom: 0px;
+}
+
+.mail {
+    font-size: 1.5em;
+    font-weight: 400;
+    margin-bottom: 2em;
+}
+
+.sessoL {
+    color: grey;
+}
+
+.sesso {
+    margin-bottom: 1em;
+}
+
+.dataNascitaL {
+    color: grey;
+}
+
+.dataNascita {
+    margin-bottom: 1em;
+}
+
+.residenzaL {
+    color: grey;
+}
+
+.residenza {
+    margin-bottom: 1em;
+}
+
+.modifica {
+    font-weight: 400;
+    font-size: 11px;
+    color: red;
+    border: 2px solid red;
+    height: 3em;
+    background-color: white;
+    position: relative;
+    top: 25%;
+}
+

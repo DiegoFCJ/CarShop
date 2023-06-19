@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="offset-4 col-2">
+    <p class="signs">
+      <a>
+        <i (click)="changeQuantity(false)" [ngClass]="{ 'activeness': isDisabled(aqServ.quantityToAdd) }" class="bi bi-dash-circle"></i>
+      </a>
+      <span>{{aqServ.quantityToAdd}}</span>
+      <a>
+        <i (click)="changeQuantity(true)" class="bi bi-plus-circle"></i>
+      </a>
+    </p>
+  </div>
+  <div class="col-6"> 
+    <a mat-button (click)="isAdded = true" (click)="isAddedToCart()" class="btn btn-danger bottone" role="button" aria-expanded="false">
+      AGGIUNGI AL CARRELLO
+    </a>      
+  </div>
+ </div>

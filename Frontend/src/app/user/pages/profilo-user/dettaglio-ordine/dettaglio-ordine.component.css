@@ -1,0 +1,63 @@
+.back {
+  margin-top: 3em;
+  margin-left: 2em;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.titolo {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.dataOrario {
+  margin-top: 44px;
+  padding-right: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border: none;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.ctain {
+  height: 58em;
+}
+
+.imgView {
+  width: 15px;
+  height: 15px;
+}
+
+th { 
+  font-weight: 800;
+  color: black;
+}
+
+
+.foto {
+  width: 5em;
+  height: 4em;
+}
+
+.spese {
+  margin-bottom: 0%;
+  font-size: 15px;
+  position: relative;
+  left: 60%;
+  top: 38%;
+}
+
+.costoTotale {
+  font-weight: 750;
+}

@@ -1,0 +1,14 @@
+.path p {
+    display: inline-block;
+    color: #838383;
+    font-size: small;
+}
+
+.evidenziato {
+    font-weight: bold;
+    color: #17100a;
+}
+
+* {
+    text-align: left;
+}

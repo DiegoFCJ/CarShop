@@ -1,0 +1,95 @@
+<app-location></app-location>
+
+
+
+
+
+
+
+<!--Grafico a linea-->
+<div class="row">
+  <div class="col-7 offset-5">
+<clr-charts type='line'[data]="data" options="options"></clr-charts>
+</div>
+</div>
+
+<!--Elenco tutti i prodotti-->
+<div style="margin: 10px; margin-left: 0px;">
+  <div>
+    <div class="col-md-10" style="margin-left: 10px; margin-right: 10px; float: left; width: 100%;">
+      
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row" style="text-align: left; margin-left: 30px;">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> ID <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let auto" style="text-align: left; padding-left: 30px;"> {{auto.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="modello">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> MODELLO <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let auto" style="text-align: left; padding-left: 30px;"> {{auto.modello}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="prezzo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> PREZZO <div class="bordo"><span>|</span></div></th>
+          <td mat-cell *matCellDef="let auto" style="text-align: left; padding-left: 30px;"> {{auto.prezzo}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="quantita">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="identifica"> QUANTITA' </th>
+          <td mat-cell *matCellDef="let auto" style="text-align: left; padding-left: 30px;"> {{auto.quantita}} </td>
+        </ng-container>
+
+        <!-- Eye Column -->
+        <ng-container matColumnDef="eye">
+          <th mat-header-cell *matHeaderCellDef class="identifica"></th>
+          <td mat-cell *matCellDef="let auto" style="text-align: right; padding-left: 30px;">
+            <a [routerLink]="['../modifica-auto/', auto.id]"><button><i class="bi bi-eye" style="margin-right: 5px;"></i></button></a>
+            <div style="float: right;	color: #e8e8ea;"><span>|</span></div> 
+          </td>
+        </ng-container>
+        
+        <!-- Trash Column -->
+        <ng-container matColumnDef="trash">
+          <th mat-header-cell *matHeaderCellDef class="identifica"></th>
+          <td mat-cell *matCellDef="let auto" style="text-align: left;"> 
+            <button (click)="delete(auto)"><i class="bi bi-trash" style="margin-left: 5px;"></i></button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+            (click)="selection.toggle(row)">
+        </tr>
+      </table>
+      <div class="row" style="padding-left: 7px; padding-right: 8px;">
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+    <!--<div class="col-md-1">
+
+    </div>-->
+  </div>
+</div>

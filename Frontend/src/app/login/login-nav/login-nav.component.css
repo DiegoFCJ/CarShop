@@ -1,0 +1,19 @@
+#LoginNAV {
+    border-bottom-left-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+}
+
+.OvUSER {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Colore di sfondo scuro */
+    opacity: 0.3; /* Opacità dell'overlay */
+}
+
+.overlay {
+    border-bottom-left-radius: 40px !important;
+    border-bottom-right-radius: 40px !important;
+}

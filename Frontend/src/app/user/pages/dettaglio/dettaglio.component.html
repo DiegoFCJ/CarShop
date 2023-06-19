@@ -1,0 +1,43 @@
+<div class="container cent-page">
+    <div class="row cosa justify-content-center">
+        <div *ngIf="singleAuto" class="col-6">
+            <app-dettaglio-foto [singleAuto]="singleAuto"></app-dettaglio-foto>
+        </div>
+
+        <div class="col-6 pt-5 pb-5 d-flex align-content-end">
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div *ngIf="singleAuto" class="col-12">
+                        <h1 class="txt-f">{{singleAuto.modello}}</h1>
+                        <h1>{{singleAuto.prezzo}} €</h1>
+                        <div class="row mt-5">
+                            <h5 class="col-6 tit modello">MODELLO</h5>
+                            <h5 class="col-6 tit codice">CODICE PRODOTTO</h5>
+                        </div>
+                        <div class="row">
+                            <p  class="tx col-6">{{singleAuto.modello}}</p>
+                            <p  class="tx col-6">{{singleAuto.codice}}</p>
+                        </div>
+                        <h5 class="tit descr">DESCRIZIONE</h5>
+                        <p  class="tx pe-5 me-2">{{singleAuto.descrizione}}</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="buttons col-12 align-self-end">
+                        <div class="row d-flex justify-content-end">
+                            <div *ngIf="visibile" class="col-4 ps-0">
+                                <app-quantity [singleAuto]="singleAuto"></app-quantity>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="justify-content-center ps-5">
+            <h1 class="txt-f">Prodotti Correlati</h1>
+            <app-prod-list></app-prod-list>
+        </div>
+    </div>
+</div>
+

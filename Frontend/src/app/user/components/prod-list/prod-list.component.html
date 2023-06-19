@@ -1,0 +1,18 @@
+
+
+    <div class="row">
+
+      <ng-container *ngIf="autoServ.isFiltered; else notFiltered">
+        <div class="col mt-4" *ngFor="let item of autoServ.filteredAutos">
+          <app-prod-card [item]="item"></app-prod-card>
+        </div>
+      </ng-container>
+      <ng-template #notFiltered>
+        <div class="col mt-4" *ngFor="let item of autos">
+          <app-prod-card [item]="item"></app-prod-card>
+        </div>
+      </ng-template>
+      
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>

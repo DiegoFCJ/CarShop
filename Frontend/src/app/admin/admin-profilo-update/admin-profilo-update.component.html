@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+  <div class="sfondo-div">
+
+    <div class="d-flex justify-content-between p-4">
+
+    <h3>{{conc.nome}}</h3>
+    <button class="save-btn btn" (click)="update()">SALVA</button>
+    </div>
+    <div class="d-flex container-fluid">
+      <h3 style="color: grey">Informazioni generali</h3>
+    </div>
+    
+
+    <div class="mb-3 px-4 col-6">
+      
+      <input type="text" class="form-control" placeholder="Nome *" aria-label="Username" value="{{conc.nome}}" id="nome">
+    </div>
+
+
+    <div class="row container-fluid mr-0">
+    <div class="mb-3 col-3">
+      
+      <input type="text" class="form-control" placeholder="Indirizzo *" aria-label="Indirizzo *" value="{{conc.indirizzo}}" id="indirizzo">
+    </div>
+
+    <div class="mb-3 col-3 chap">
+      
+      <input type="text" class="form-control" placeholder="Nazione *" aria-label="Nazione *" value="{{conc.nazione}}" id="nazione">
+    </div>
+    <div class="mb-3 col-3">
+      
+      <input type="text" class="form-control" placeholder="Provincia *" aria-label="Provincia *" value="{{conc.provincia}}" id="provincia">
+    </div>
+    <div class="mb-3 col-3">
+      
+      <input type="text" class="form-control" placeholder="Città di residenza *" aria-label="Città di residenza *" value="{{conc.citta}}" id="citta">
+    </div>
+  </div>
+  <div class="row container-fluid mr-0">
+    <div class="mb-3 col-12">
+      
+      <input style="height: 15vh;" type="text" class="form-control" placeholder="Descrizione *" aria-label="Descrizione *" value="{{conc.descrizione}}" id="descrizione">
+    </div>
+  </div>
+  <div class="container-fluid">
+    <p style="color: grey;">* Campi obbligatori</p>
+  </div>
+</div>

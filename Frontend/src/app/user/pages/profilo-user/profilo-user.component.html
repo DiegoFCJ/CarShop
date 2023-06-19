@@ -1,0 +1,35 @@
+<!-- <div class="form-group" style="margin-top: 10%; margin-left:10%; width:25%">
+    <h1 style="font-size:3em; padding-bottom:1.5em"><b>Profilo personale</b></h1>
+    <span class="row" style="background-color: brown; height: 100px; margin-left: 0px; margin-right: 0px"></span>
+    <div class="form-group" style="padding-top:30px; padding-left:50px;background-color:#cbcbcb">
+        <h1><b>Luis Marker</b></h1>
+        <h2>luismarker@gmail.com</h2>
+    </div>
+    
+</div> -->
+
+    <div class="container-fluid all">
+        <div class="row">
+            <div class="col-3 offset-1 "> <!-- così rimane 5 per la modifica e 2 per l'offset-->
+                <div class="row" style="margin-top: 10em;">
+                    <h1 style="font-size: 3em;">Profilo personale</h1>
+                </div>
+                <app-dettaglio-user></app-dettaglio-user>
+            </div>
+
+            <div class="col-7">
+                <div *ngIf="this.storico; else dettagli"class="row" style="margin-top: 17em;">
+                    <app-storico-acquisti></app-storico-acquisti>
+                </div>
+
+                <ng-template #dettagli>
+                    <div class="row"style="margin-top: 17em;">
+                        <app-dettaglio-ordine></app-dettaglio-ordine>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        
+    </div>
+
+

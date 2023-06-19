@@ -1,0 +1,38 @@
+.signs{
+    display: flex;
+    justify-content: end;
+    color: black;
+    font-weight: 490;
+}
+
+.signs span{
+    padding-top: 2px;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.signs a i{
+    font-weight: bolder;
+    font-size: 19px;
+    text-decoration: none;
+}
+
+.signs a:hover{
+    cursor: pointer;
+    scale: 1.4;
+}
+
+.activeness{
+    color: rgb(193, 193, 193) !important;
+}
+
+
+.bottone{
+    font-weight: 400;
+    font-size: 11px;
+    border: 0;
+    height: 34px;
+    background-color: #AA1010;
+    margin-left: 10px;
+}

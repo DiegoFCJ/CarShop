@@ -1,0 +1,7 @@
+*{
+    overflow: hidden;
+}
+
+.shadowfix {
+    z-index: 1;
+}

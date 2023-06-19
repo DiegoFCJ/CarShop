@@ -1,0 +1,65 @@
+﻿<div style="margin-top:270px">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <h1 class="text-center" ><b>Accedi a Carshop</b></h1>
+            <h4 class="text-center" style="color:gray">Inserisci le credenziali di accesso inserite in fase di registrazione</h4>
+            <br />
+            <br />
+            <form class="col-md-8 offset-md-2" #f="ngForm">
+
+                <div class="form-group needs-validation" style="border: 1px solid #cbcbcb; border-radius: 3px">
+                    <input [(ngModel)]="email"
+                           class="form-control border-0"
+                           type="text"
+                           id="email"
+                           name="email"
+                           placeholder="Mail">
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group" style="border: 1px solid #cbcbcb; border-radius: 3px">
+                        <div class="form-floating">
+                            <input class="form-control border border-end-0"
+                                   id="floatingPassword"
+                                   name="password"
+                                   style="z-index:0"
+                                   matInput
+                                   [type]="hide ? 'password' : 'text'"
+                                   [(ngModel)]="password">
+                            <label for="floatingPassword" style="z-index:1">Password</label>
+                        </div>
+                        <button class="btn-outline-secondary" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group d-flex align-items-center">
+                        <div class="form-check">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   name="rememberMe"
+                                   [(ngModel)]="rememberMe">
+                            <label class="form-check-label" for="form2Example3">Ricordami</label>
+                        </div>
+                        <div class="ms-auto">
+                            <a href="#!" class="text-body">Password dimenticata?</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit" (click)="login(f)">ACCEDI ORA</button>
+                </div>
+
+                <div class="row mt-3 offset-md-4" >
+                    <div class="col-md-12" style="margin-top:15px">
+                        <label class="testo">Non hai un account?</label>
+                        <a [routerLink]="['/register']" class="Reg">Registrati</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="all">
+  <div class="row rigaColore"></div>
+  <div class="row rigaForm"  *ngIf="anagrafica">
+    <form action="" class="dettagliForm">
+      <app-immagine-profilo class="imgProfilo"></app-immagine-profilo>
+      <label for="name" class="col-12 nome">{{anagrafica.nome + " " + anagrafica.cognome}}</label>
+      <label for="email" class="col-12 mail">{{user.email}}</label>
+
+      <label for="sessoL" class="col-12 sessoL">GENERE</label>
+      <label for="sesso" class="col-12 sesso">{{anagrafica.genere}}</label>
+
+      <label for="dataNascitaL" class="col-12 dataNascitaL">DATA DI NASCITA</label>
+      <label for="dataNascita" class="col-12 dataNascita">{{anagrafica.dataNascita}}</label>
+
+      <label for="residenzaL" class="col-12 residenzaL">DATI DI RESIDENZA</label>
+      <label for="residenza" class="col-12 residenza">{{anagrafica.indirizzo + " " + anagrafica.cittaResidenza+", "+anagrafica.provincia}}</label>
+      
+     <a [routerLink] = "['/user/modifica-profilo']" href="#"> <button type="submit" class="col-12 btn btn-danger modifica">MODIFICA</button> </a>
+    </form>
+  </div>
+
+</div>

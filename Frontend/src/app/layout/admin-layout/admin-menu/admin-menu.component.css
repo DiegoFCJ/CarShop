@@ -1,0 +1,72 @@
+.sidenav {
+    height:92vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*background-color: #263238;*/
+    overflow-x: visible;
+    transition: 0.5s;
+    padding-top: 0;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  
+  .menubtn{
+      width: 100%;
+      height: 50px;
+      text-align: left;
+      background-color: white;
+      color: #15100a;
+      border: none;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e0e0e0;
+  }
+  
+  
+  a{
+      text-decoration: none;
+      color: black;
+  }
+  
+  button:focus {
+      background-color: #f9eded;
+  }
+  
+  button:hover, a:hover {
+  background-color: #f9eded;
+  /*color: darkorange;*/
+  }
+
+  .icona {
+    color: #838383;
+  }
+
+  .mat-icon {
+    color: #838383;
+    /*float: right;*/
+    
+  }
+
+  .arrow-user{
+    scale: 1.4;
+    padding-left: 47%;
+    padding-top: 4px;
+  }
+
+  .arrow-product{
+    scale: 1.4;
+    padding-left: 42%;
+    padding-top: 4px;
+  }
+
+  .icona-profilo{
+    padding-top: 1px;
+  }
+
+  *{
+      font-size: 16px;
+  }

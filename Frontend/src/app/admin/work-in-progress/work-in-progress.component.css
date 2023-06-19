@@ -1,0 +1,31 @@
+
+.divprofilo1{
+    height: 11vh;
+    padding-top: 15px;
+}
+
+.dati-admin{
+    height:18vh;
+    padding:15px;
+    background-color: white;
+    
+}
+
+.dati-biblioteca{
+    height:30vh;
+    padding:15px;
+    background-color: white;
+}
+
+.grassetto{
+    font-weight: bold;
+}
+
+.modify-btn{
+    background-color: white;
+    color: #A60F0F;
+    border-color: #A60F0F;
+    border-radius: 3px;
+    padding:7px 15px 7px 15px;
+    
+}

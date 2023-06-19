@@ -1,0 +1,24 @@
+.card, .card-img, .card-img-overlay{
+    border: 0;
+    border-radius: 0;
+}
+
+.card{
+    padding-top: 57px;
+}
+
+.card-img{
+    height: 42vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-text {
+    position: relative;
+    font-weight: 660;
+    top: 80px;
+    left: 100px;
+    font-size: 60px;
+    width: 30%;
+    line-height: 1;
+}

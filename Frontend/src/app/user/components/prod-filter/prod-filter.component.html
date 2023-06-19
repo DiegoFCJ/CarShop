@@ -1,0 +1,48 @@
+<!-- Example single danger button -->
+<div class="row container-fluid justify-content-center mt-4">
+  <div class=" col-offset-1 col-6">
+    <div class="btn-group col-3" *ngFor="let i of ob">
+      <button style="border-radius: 4px;" type="button" class="btn dropdown pt-4 pb-4 mr-2" data-bs-toggle="dropdown">
+        <span class="left-text">{{i.btn}}</span>
+        <span class="right-arrow">
+          <i class="bi bi-chevron-down" style="color: black;"></i>
+        </span>
+      </button>
+      <ul class="dropdown-menu" [ngSwitch]="i.btn">
+
+        <div *ngSwitchCase="'Modello'">
+          <div *ngFor="let i of modelli">
+            <a class="dropdown-item" (click)="filters(i, null, null)">{{i}}</a>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'Costo'">
+          <div *ngFor="let i of costi">
+            <a class="dropdown-item" (click)="filters(null, i, null)">€ {{i}}</a>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'Anno'">
+          <div *ngFor="let i of anni">
+            <a class="dropdown-item" (click)="filters(null, null, i)">{{i}}</a>
+          </div>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="forma col-offset-1 col-4">
+    <form role="search" #f="ngForm">
+      <div class="input-group">
+        <input id="inp" class="input form pt-4 pb-4" name="search" type="search" aria-label="Search" (ngModel)="search">
+        <label for="inp" class="placeholder">Ricerca Prodotti</label>
+      </div>
+        <button class="lens" type="submit" (click)="search(f)">
+          <div class="grande">
+            <i class="bi bi-search"></i>
+          </div>
+        </button>
+    </form>
+  </div>
+</div>

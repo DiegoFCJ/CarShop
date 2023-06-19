@@ -1,0 +1,64 @@
+<div class="container bg-white text-dark ctain">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn-link back" (click)="backComponent()"><-- RITORNA ALLO STORICO</button>
+    </div>
+    <div class="col-6 text-right dataOrario" *ngIf="acquistiDTO">
+      {{acquistiDTO[0]?.dataAcquisto}}  {{acquistiDTO[0]?.orarioAcquisto}}
+    </div>
+  </div>
+
+  <h2 class="titolo">Dettagli ordine #{{idOrdine}}</h2>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="immagine">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>PRODOTTO</th>
+      <td mat-cell *matCellDef="let element">
+          <img class="foto" src={{getImmagine(element)}} alt="">
+       </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prodotto">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let element"> {{element.auto.modello}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="quantita">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> QUANTITA' </th>
+      <td mat-cell *matCellDef="let element"> {{element.quantita}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="prezzo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> COSTO </th>
+      <td mat-cell *matCellDef="let element"> €. {{element.prezzo}} </td>
+    </ng-container>
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <div class="spese">
+   <div class="spedizione">
+    Spedizione
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    €. 5.00
+   </div>
+    <hr width="300">
+
+    <div class="costoTotale" *ngIf="somma">
+      Totale:
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      €. {{this.somma}}   
+    </div>
+
+  </div>
+
+</div>

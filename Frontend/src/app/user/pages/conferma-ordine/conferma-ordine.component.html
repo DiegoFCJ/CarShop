@@ -1,0 +1,39 @@
+<body>
+<div class="container cosa cent-page p-5 pb-0">
+  <div class="offset-1 col-10">
+    <div class="row">
+      <i class="col-2 material-icons" style="color: #A60F0F; scale: 2.4;">verified</i>
+    </div>
+  </div>
+  <div class="col-10 mt-5">
+    <div class="row">
+      <h1 class="col-10 fw-bold">Ordine ricevuto!</h1>
+    </div>
+  </div>
+  <div class="col-10">
+    <div class="row">
+      <p class="col-10 " style="font-size: medium;">Il tuo ordine n {{orderId()}} è andato a buon fine.</p>
+    </div>
+  </div>
+  <hr class="mt-4 mb-4" style="height: 1.5px; background-color: black; border: none; color: #525252;">
+  <div>
+    <h2 class="fw-bold">Info utente</h2>
+    <p style="color: #868686;">DATI DI RESIDENZA</p>
+    <p class="bold">{{anagOrdUser.indirizzo}} - {{anagOrdUser.cittaResidenza}} ({{anagOrdUser.provincia}})</p>
+  </div>
+  <hr class="mt-4 mb-4" style="height: 1.5px; background-color: black; border: none; color: #525252;">
+  <div>
+    <h2 class="fw-bold">Info prodotti</h2>
+    <br>
+
+    
+  <div *ngFor="let auto of acquistiService.autos">
+    <div  *ngIf="!auto.acquistato">
+      <app-shop-prod-list [auto]="auto"></app-shop-prod-list>
+    </div>
+  </div>
+  
+  </div>
+  
+</div>
+</body>
